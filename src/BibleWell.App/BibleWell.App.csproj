@@ -9,12 +9,29 @@
     </ItemGroup>
 
     <ItemGroup>
+      <AvaloniaXaml Remove="Assets\Icons.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Avalonia" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" />
         <PackageReference Include="Avalonia.Themes.Fluent" />
         <PackageReference Include="Avalonia.Fonts.Inter" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+        <PackageReference Include="sqlite-net-pcl" />
+        <PackageReference Include="SQLitePCLRaw.bundle_green" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaResource Update="Assets\Icons.axaml">
+        <SubType>Designer</SubType>
+      </AvaloniaResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\" />
     </ItemGroup>
 </Project>
